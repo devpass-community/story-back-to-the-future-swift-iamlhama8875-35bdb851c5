@@ -5,7 +5,11 @@ extension Date {
     func dateAfter(years: Int) -> Date? {
      
         // TODO
-        return nil
+        let date = self
+        var dateComponent = DateComponents()
+        dateComponent.year = years
+        let final = Calendar.current.date(byAdding: dateComponent, to: date)
+        return final
     }
     
     func formattedDate() -> String {
